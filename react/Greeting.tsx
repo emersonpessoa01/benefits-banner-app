@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-  name: string
+  name: string;
+  dataCustom?: string;
+};
+
+function Greeting({ name, dataCustom }: Props) {
+  return (
+    <div>
+      <h1>Hey, {name}</h1>
+      <p>Data: {dataCustom}</p>
+    </div>
+  );
 }
 
-function Greeting({ name }: Props) {
-  return <div>Hey, {name}</div>
-}
-
-export default Greeting
+export default Greeting;

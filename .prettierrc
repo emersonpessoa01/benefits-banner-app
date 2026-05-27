@@ -1,1 +1,9 @@
-"@vtex/prettier-config"
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "printWidth": 60,
+  "jsdocPrintWidth": 60,
+  "@vtex/prettier-config": true
+}

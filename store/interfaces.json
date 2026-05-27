@@ -1,5 +1,7 @@
 {
-    "benefits-banner": {
-        "component": "Greeting"
-    }
+  "benefits-banner": {
+    "component": "Greeting",
+    "composition": "children",
+    "allowed": []
+  }
 }
