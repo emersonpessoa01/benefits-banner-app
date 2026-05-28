@@ -15,6 +15,11 @@ function BenefitsBanner({ name, dataCustom }: Props) {
     return null;
   }
   console.log("Produto no BenefitsBanner:", product);
+  const dateCurrent = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
 
   return (
     <div
@@ -44,18 +49,9 @@ function BenefitsBanner({ name, dataCustom }: Props) {
           fontWeight: "bold"
         }}
       >
-        Data: {dataCustom}
+        Data: {dateCurrent} {dataCustom && `| Custom: ${dataCustom}`}
       </p>
-      <p
-        style={{
-          color: "#333",
-          margin: 0,
-          fontSize: "14px",
-          fontWeight: "bold"
-        }}
-      >
-        Você está visualizando o produto: {product.productName}
-      </p>
+      
 
       <p style={{ color: "#555", margin: 0, fontSize: "12px" }}>
         Marca: {product.brand} - Categoria:
