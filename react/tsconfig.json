@@ -1,6 +1,7 @@
 {
   "extends": "@vtex/tsconfig",
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "noEmitOnError": false,
     "lib": ["dom", "ES2015"],
     "module": "esnext",

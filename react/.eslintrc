@@ -1,3 +1,13 @@
 {
-  "extends": "vtex-react/io"
+  "extends": "vtex-react",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/style-prop-object": "off"
+  },
+  "ignorePatterns": ["tsconfig.json"]
 }
