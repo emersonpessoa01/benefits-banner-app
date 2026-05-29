@@ -2,37 +2,37 @@ import React from "react";
 import { useProduct } from "vtex.product-context";
 
 type Props = {
-  name: string;
-  dataCustom?: string;
+  discount?: string;
+  installments?: string;
 };
 
-function BenefitsBanner({ name, dataCustom }: Props) {
+function BenefitsBanner({ discount, installments }: Props) {
   const productContext = useProduct();
-  const product = productContext?.product;
+  // const product = productContext?.product;
 
-  if (!product) {
-    // console.log("Produto não encontrado no contexto do produto.");
-    return null;
-  }
-  console.log("Produto no BenefitsBanner:", product);
-  const dateCurrent = new Date().toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric"
-  });
+  // console.log("Produto no BenefitsBanner:", product);
+  console.log("Contexto do produto:", productContext);
+  // const dateCurrent = new Date().toLocaleDateString("pt-BR", {
+  //   day: "2-digit",
+  //   month: "2-digit",
+  //   year: "numeric"
+  // });
+  const listPrice =
+    productContext?.selectedItem?.sellers[0].commertialOffer.ListPrice;
+  const installmentsValue = listPrice ? listPrice / Number(installments) : 0;
 
   return (
     <div
       style={{
         backgroundColor: "#f3f4f6",
-        padding: "20px",
-        marginTop: "20px",
+        padding: "10px",
         borderRadius: "8px",
-        border: "2px dashed #00419e",
-        textAlign: "center"
+        border: ".1px solid rgba(0, 0, 0, .1)",
+        maxWidth: "250px",
+        width: "100%"
       }}
     >
-      <h1
+      {/* <h1
         style={{
           color: "#00419e",
           margin: "0 0 10px 0",
@@ -40,8 +40,8 @@ function BenefitsBanner({ name, dataCustom }: Props) {
         }}
       >
         Hey, {name}
-      </h1>
-      <p
+      </h1> */}
+      {/* <p
         style={{
           color: "#333",
           margin: 0,
@@ -50,13 +50,17 @@ function BenefitsBanner({ name, dataCustom }: Props) {
         }}
       >
         Data: {dateCurrent} {dataCustom && `| Custom: ${dataCustom}`}
-      </p>
-      
+      </p> */}
 
-      <p style={{ color: "#555", margin: 0, fontSize: "12px" }}>
-        Marca: {product.brand} - Categoria:
-        {product.categories.join(" > ")}
-      </p>
+      <span style={{ color: "#555", margin: 0, fontSize: "12px" }}>
+        Em até {installments} de R$ {installmentsValue?.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL"
+        })} sem juros você poderá pagar a vista R$ {listPrice?.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL"
+        })} ou ganhar {discount}% de desconto no boleto.
+      </span>
     </div>
   );
 }
