@@ -28,7 +28,7 @@ function BenefitsBanner({ discount, installments }: Props) {
         padding: "10px",
         borderRadius: "8px",
         border: ".1px solid rgba(0, 0, 0, .1)",
-        maxWidth: "250px",
+        maxWidth: "45rem",
         width: "100%"
       }}
     >
@@ -56,7 +56,7 @@ function BenefitsBanner({ discount, installments }: Props) {
         Em até {installments} de R$ {installmentsValue?.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL"
-        })} sem juros você poderá pagar a vista R$ {listPrice?.toLocaleString("pt-BR", {
+        })} sem juros você poderá pagar à vista R$ {listPrice?.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL"
         })} ou ganhar {discount}% de desconto no boleto.
