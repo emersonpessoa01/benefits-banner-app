@@ -1,5 +1,6 @@
 {
     "benefits-banner": {
-        "component": "Greeting"
+        "component": "BenefitsBanner",
+        "composition": "children"
     }
 }
