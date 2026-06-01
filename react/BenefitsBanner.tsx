@@ -1,65 +1,43 @@
-// @ts-nocheck
+import React from "react";
 import { useCssHandles } from "vtex.css-handles";
 
-const HANDLES = [
-  "benefitsContainer",
+const CSS_HANDLES = [
+  "bannerContainer",
   "benefitsList",
-  "benefitsItem",
-  "benefitsIcon",
-  "benefitsTextContainer",
-  "benefitsMainText",
+  "benefitItem",
+  "benefitTextContainer",
+  "benefitMainText",
   "benefitSubText"
-] as const;
+];
 
 function BenefitsBanner() {
-  const {
-    benefitsContainer,
-    benefitsList,
-    benefitsItem,
-    benefitsIcon,
-    benefitsTextContainer,
-    benefitsMainText,
-    benefitSubText
-  } = useCssHandles(HANDLES);
+  // Retornando a desestruturação correta exigida pelo tipo CssHandlesBag
+  const { handles } = useCssHandles(CSS_HANDLES);
 
   return (
-    <div className={benefitsContainer}>
-      <div className={benefitsList}>
-        {/* Selo 1 */}
-        <div className={benefitsItem}>
-          <div className={benefitsContainer}>
-            <span className={benefitsMainText}>
-              Frete Grátis
-            </span>
-            <span className={benefitSubText}>
-              Em compras acima de R$150
-            </span>
+    <div className={handles.bannerContainer}>
+      <ul className={handles.benefitsList}>
+        <li className={handles.benefitItem}>
+          <div className={handles.benefitTextContainer}>
+            <span className={handles.benefitMainText}>Frete Grátis</span>
+            <span className={handles.benefitSubText}>Em compras acima de R$ 150</span>
           </div>
-        </div>
-        {/* Selo 2 */}
-        <div className={benefitsItem}>
-          <div className={benefitsContainer}>
-            <span className={benefitsMainText}>
-              Até 6x Sem Juros
-            </span>
-            <span className={benefitSubText}>
-              Ou desconto no PIX
-            </span>
-          </div>
-        </div>
+        </li>
 
-        {/* Selo 3 */}
-        <div className={benefitsItem}>
-          <div className={benefitsContainer}>
-            <span className={benefitsMainText}>
-              Entrega Rápida
-            </span>
-            <span className={benefitSubText}>
-              Receba em tempo recorde
-            </span>
+        <li className={handles.benefitItem}>
+          <div className={handles.benefitTextContainer}>
+            <span className={handles.benefitMainText}>Até 6x Sem Juros</span>
+            <span className={handles.benefitSubText}>Ou desconto no PIX</span>
           </div>
-        </div>
-      </div>
+        </li>
+
+        <li className={handles.benefitItem}>
+          <div className={handles.benefitTextContainer}>
+            <span className={handles.benefitMainText}>Entrega Rápida</span>
+            <span className={handles.benefitSubText}>Receba em tempo recorde</span>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 }
