@@ -3,7 +3,10 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
     "noEmitOnError": false,
-    "lib": ["dom", "ES2015"],
+    "lib": [
+      "dom",
+      "ES2015"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "target": "es2017",
@@ -11,5 +14,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true
   },
-  "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"]
+  "include": [
+    "./typings/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.ts"
+  ]
 }

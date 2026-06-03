@@ -1,17 +1,19 @@
 import React from "react";
 import { useProduct } from "vtex.product-context";
+import { schema } from "./schemas/schema";
+import { defaultProps } from "./schemas/defaultProps";
 
 type Props = {
   discount?: string;
   installments?: string;
 };
 
-function BenefitsBanner({ discount, installments }: Props) {
+function CustomBanner({ discount, installments }: Props) {
   const productContext = useProduct();
   // const product = productContext?.product;
 
   // console.log("Produto no BenefitsBanner:", product);
-  console.log("Contexto do produto:", productContext);
+  // console.log("Contexto do produto:", productContext);
   // const dateCurrent = new Date().toLocaleDateString("pt-BR", {
   //   day: "2-digit",
   //   month: "2-digit",
@@ -53,16 +55,23 @@ function BenefitsBanner({ discount, installments }: Props) {
       </p> */}
 
       <span style={{ color: "#555", margin: 0, fontSize: "12px" }}>
-        Em até {installments} de R$ {installmentsValue?.toLocaleString("pt-BR", {
+        Em até {installments} de R${" "}
+        {installmentsValue?.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL"
-        })} sem juros você poderá pagar à vista R$ {listPrice?.toLocaleString("pt-BR", {
+        })}{" "}
+        sem juros você poderá pagar à vista R${" "}
+        {listPrice?.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL"
-        })} ou ganhar {discount}% de desconto no boleto.
+        })}{" "}
+        ou ganhar {discount}% de desconto no boleto.
       </span>
     </div>
   );
 }
 
-export default BenefitsBanner;
+CustomBanner.schema = schema;
+CustomBanner.defaultProps = defaultProps;
+
+export default CustomBanner;

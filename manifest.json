@@ -1,9 +1,9 @@
 {
   "vendor": "partnersigrowdev",
-  "name": "benefits-banner-app",
+  "name": "custom-banner-app",
   "version": "0.0.0",
-  "title": "Benefits banner",
-  "description": "Benefits banner",
+  "title": "Custom banner",
+  "description": "Custom banner",
   "builders": {
     "react": "3.x",
     "messages": "1.x",
