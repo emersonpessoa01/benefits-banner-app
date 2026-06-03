@@ -2,6 +2,9 @@ import React from "react";
 import { useProduct } from "vtex.product-context";
 import { schema } from "./schemas/schema";
 import { defaultProps } from "./schemas/defaultProps";
+import { useCssHandles } from "vtex.css-handles";
+
+const CSS_HANDLES = ["customBannerContainer", "customBannerText"] as const;
 
 type Props = {
   discount?: string;
@@ -9,6 +12,7 @@ type Props = {
 };
 
 function CustomBanner({ discount, installments }: Props) {
+  const { handles } = useCssHandles(CSS_HANDLES);
   const productContext = useProduct();
   // const product = productContext?.product;
 
@@ -24,16 +28,7 @@ function CustomBanner({ discount, installments }: Props) {
   const installmentsValue = listPrice ? listPrice / Number(installments) : 0;
 
   return (
-    <div
-      style={{
-        backgroundColor: "#f3f4f6",
-        padding: "10px",
-        borderRadius: "8px",
-        border: ".1px solid rgba(0, 0, 0, .1)",
-        maxWidth: "45rem",
-        width: "100%"
-      }}
-    >
+    <div className={handles.customBannerContainer}>
       {/* <h1
         style={{
           color: "#00419e",
@@ -54,7 +49,7 @@ function CustomBanner({ discount, installments }: Props) {
         Data: {dateCurrent} {dataCustom && `| Custom: ${dataCustom}`}
       </p> */}
 
-      <span style={{ color: "#555", margin: 0, fontSize: "12px" }}>
+      <span className={handles.customBannerText}>
         Em até {installments} de R${" "}
         {installmentsValue?.toLocaleString("pt-BR", {
           style: "currency",
