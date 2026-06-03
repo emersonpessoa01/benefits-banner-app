@@ -6,7 +6,8 @@
     "lint": "eslint --ext js,jsx,ts,tsx .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
     "lint:locales": "intl-equalizer",
-    "test": "cd ./react && yarn test"
+    "test": "cd ./react && yarn test",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -29,8 +30,25 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^25.9.1",
     "@vtex/danger": "^0.2.7",
+=======
+<<<<<<< HEAD
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "@vtex/danger": "^0.2.7",
+    "@vtex/intl-equalizer": "^2.5.0",
+    "@vtex/prettier-config": "^0.3.5",
+    "eslint": "^10.4.0",
+    "eslint-config-vtex": "^12.8.11",
+    "eslint-config-vtex-react": "^6.8.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0",
+    "typescript": "^3.9.6"
+=======
+>>>>>>> 4260007f1db67d6c35f4eebfb93cc24706931776
     "@vtex/intl-equalizer": "^2.5.0",
     "@vtex/prettier-config": "^0.3.5",
     "eslint": "^7.14.0",
@@ -39,7 +57,13 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
     "prettier": "^2.2.0",
+<<<<<<< HEAD
     "typescript": "^3.9.6"
+=======
+    "typescript": "^3.9.6",
+    "@vtex/danger": "^0.2.7"
+>>>>>>> 22b8d79c711ae90d2f24e9574acc71144f54d54a
+>>>>>>> 4260007f1db67d6c35f4eebfb93cc24706931776
   },
   "version": "0.0.0",
   "intl-equalizer": {
