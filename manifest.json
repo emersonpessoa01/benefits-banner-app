@@ -11,12 +11,9 @@
   },
   "dependencies": {
     "vtex.product-context": "0.x",
-<<<<<<< HEAD
     "vtex.css-handles": "1.x"
-=======
     "vtex.css-handles": "1.x",
     "vtex.store-graphql": "2.x"
->>>>>>> 091f2c145f0e44020fcaad59177749a8037eb458
   },
   "registries": [
     "smartcheckout"
