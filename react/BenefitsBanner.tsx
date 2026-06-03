@@ -1,3 +1,3 @@
-import BenefitsBanner from "./BenefitsBanner/BenefitsBanner";
+import BenefitsBanner from "./components/BenefitsBanner/BenefitsBanner";
 
 export default BenefitsBanner;
